@@ -1,0 +1,22 @@
+const body = document.querySelector('body');
+const textInput = document.createElement("input");
+const button = document.createElement("button");
+button.textContent = "ADD"
+const div = document.createElement("div");
+const list = document.createElement("ul");
+
+body.appendChild(div);
+div.appendChild(textInput);
+div.appendChild(button);
+div.appendChild(list);
+
+button.addEventListener('click', () => {
+	if(textInput.value){
+    	const li = document.createElement("li");
+        li.textContent = textInput.value;
+        list.appendChild(li);
+        textInput.value = "";
+      	li.addEventListener('click', ()=> li.remove())
+        count++;
+    }
+});
